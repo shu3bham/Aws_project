@@ -1,0 +1,40 @@
+{
+  "name" : "curation job sample",
+  "description" : "",
+  "role" : "arn:aws:iam::193276374581:role/glue-full-access-delete",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-193276374581-us-west-2/scripts/curation job sample.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--FILE_NAME" : "NA",
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-193276374581-us-west-2/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--SUBJOB_ID" : "2024",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-193276374581-us-west-2/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "3.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "Aws_project",
+    "branch" : "main",
+    "folder" : "curation job sample"
+  }
+}
